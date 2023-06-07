@@ -18,8 +18,12 @@ if (!empty($block['anchor'])) {
     $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
 }
 
+
+
 // Create class attribute allowing for custom "className" and "align" values.
+$randy = rand(100, 999);
 $class_name = 'proyecto-block';
+
 if (!empty($block['className'])) {
     $class_name .= ' ' . $block['className'];
 }
@@ -46,16 +50,16 @@ $cc                 = get_sub_field('licencia');
 ?>
 <div class="<?php echo esc_attr($class_name); ?>">
 
-    <!-- <div class="search-bar">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar..">
-    </div> -->
+    <div class="search-bar">
+        <input type="text" id="myInput<?php echo '-' . $randy; ?>" onkeyup="myFunction<?php echo $randy; ?>()" placeholder="Buscar..">
+    </div>
 
     <?php if (have_rows('lista')) : ?>
-        <ul id="myUL" class="lista">
+        <ul id="myUL<?php echo '-' . $randy; ?>" class="lista">
             <?php while (have_rows('lista')) : the_row();
 
             ?>
-                <li class="lista-item card">
+                <li class="lista-item">
                     <a href="<?php the_sub_field('url'); ?>" target="_blank">
                         <h3>
                             <?php the_sub_field('titulo'); ?>
@@ -81,4 +85,25 @@ $cc                 = get_sub_field('licencia');
             <?php endwhile; ?>
         </ul>
     <?php endif; ?>
+    <script>
+        function myFunction<?php echo $randy; ?>() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('myInput<?php echo '-' . $randy; ?>');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL<?php echo '-' . $randy; ?>");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </div>

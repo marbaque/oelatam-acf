@@ -51,7 +51,7 @@ $cc                 = get_sub_field('licencia');
 <div class="<?php echo esc_attr($class_name); ?>">
 
     <div class="search-bar">
-        <input type="text" id="myInput<?php echo '-' . $randy; ?>" onkeyup="myFunction<?php echo $randy; ?>()" placeholder="Buscar..">
+        <input type="text" id="myInput<?php echo '-' . $randy; ?>" onkeyup="myFunction<?php echo $randy; ?>()" placeholder="Buscar por nombre...">
     </div>
 
     <?php if (have_rows('lista')) : ?>

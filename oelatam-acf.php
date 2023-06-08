@@ -3,7 +3,7 @@
   Plugin Name: OELatam Proyectos
   PLugin URI:
   Description: Adds custom Gutenberg blocks
-  Version: 1.0
+  Version: 1.1
   Author: Mario Badilla
   Author URI: @marbaque
   License: GPL2
@@ -11,7 +11,7 @@
 */
 if (!defined('ABSPATH')) exit;
 
-define('PROY__PLUGIN_VERSION', '1.0');
+define('PROY__PLUGIN_VERSION', '1.1');
 define('PROY__PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('PROY__PLUGIN_URL', plugin_dir_url(__FILE__));
 define('PROY__BASENAME', plugin_basename(__FILE__));
@@ -50,6 +50,24 @@ add_action('enqueue_block_assets', 'proyectos_common_css');
 
 include_once(PROY__PLUGIN_PATH . '/blocks/proyecto/fields.php');
 
+/**
+ ** https://www.zorem.com/create-wordpress-shortcode-to-display-websites-screenshot-thumbnails/
+ */
+
+function wpr_snap($atts, $content = null)
+{
+    extract(shortcode_atts(array(
+        "snap" => 'http://s.wordpress.com/mshots/v1/',
+        "url" => 'http://www.internoetics.com',
+        "alt" => 'Image text',
+        "w" => '400', // width
+        "h" => '240' // height
+    ), $atts));
+
+    $img = '<img src="' . $snap . '' . urlencode($url) . '?w=' . $w . '&h=' . $h . '" alt="' . $alt . '">';
+    return $img;
+}
+add_shortcode("snap", "wpr_snap");
 
 // Auto Update
 

@@ -75,7 +75,7 @@ add_shortcode("snap", "wpr_snap");
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/ocwc/oeg-blocks-acf',
+    'https://github.com/marbaque/oelatam-acf.git',
     __FILE__, //Full path to the main plugin file or functions.php.
     'oelatam-acf'
 );

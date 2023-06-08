@@ -8,6 +8,8 @@
   Author URI: @marbaque
   License: GPL2
   License URI: https://www.gnu.org/licenses/gpl-2.0.html
+  Github Plugin URI: https://github.com/marbaque/oelatam-acf.git
+  Primary Branch: main
 */
 if (!defined('ABSPATH')) exit;
 

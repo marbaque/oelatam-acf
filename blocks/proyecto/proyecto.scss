@@ -80,6 +80,9 @@
         input {
             font-family: "Montserrat", Helvetica, Arial, sans-serif;
             font-size: 0.8em;
+            border: solid 1px var(--color-gray-200);
+            padding: 0.25em;
+            border-radius: 2px;
         }
     }
 
@@ -121,13 +124,9 @@
             }
 
             .title {
-                font-size: 1.1em;
+                font-size: 1em;
                 line-height: 1.25;
                 font-weight: 700;
-
-                svg {
-                    margin-bottom: -0.1em;
-                }
             }
 
             p {
@@ -137,7 +136,8 @@
                 line-height: 1.25;
             }
 
-            p.autor {
+            p.autor,
+            p.pais {
                 font-weight: 700 !important;
             }
         }

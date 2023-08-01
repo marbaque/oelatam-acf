@@ -3,7 +3,7 @@
   Plugin Name: OELatam Proyectos
   PLugin URI:
   Description: Adds custom Gutenberg blocks
-  Version: 1.1
+  Version: 1.2
   Author: Mario Badilla
   Author URI: @marbaque
   License: GPL2
@@ -13,7 +13,7 @@
 */
 if (!defined('ABSPATH')) exit;
 
-define('PROY__PLUGIN_VERSION', '1.1');
+define('PROY__PLUGIN_VERSION', '1.2');
 define('PROY__PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('PROY__PLUGIN_URL', plugin_dir_url(__FILE__));
 define('PROY__BASENAME', plugin_basename(__FILE__));

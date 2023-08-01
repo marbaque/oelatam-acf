@@ -80,6 +80,9 @@
 .proyecto-block .search-bar input {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 0.8em;
+  border: solid 1px var(--color-gray-200);
+  padding: 0.25em;
+  border-radius: 2px;
 }
 .proyecto-block .lista {
   margin: 1em 0;
@@ -116,12 +119,9 @@
   text-decoration: none;
 }
 .proyecto-block .lista .lista-item .title {
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.25;
   font-weight: 700;
-}
-.proyecto-block .lista .lista-item .title svg {
-  margin-bottom: -0.1em;
 }
 .proyecto-block .lista .lista-item p {
   font-size: 0.8rem;
@@ -129,7 +129,8 @@
   margin-top: 0.75em;
   line-height: 1.25;
 }
-.proyecto-block .lista .lista-item p.autor {
+.proyecto-block .lista .lista-item p.autor,
+.proyecto-block .lista .lista-item p.pais {
   font-weight: 700 !important;
 }
 
